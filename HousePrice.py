@@ -82,7 +82,7 @@ print(f"R-squared: {r2:.2f}")
 # In[62]:
 
 
-model = gb_regressor  # Load your trained model here
+model = gb_regressor  
 
 
 # In[70]:
@@ -92,10 +92,8 @@ import streamlit as st
 import pandas as pd
 from sklearn.ensemble import GradientBoostingRegressor
 
-# Assuming you have already loaded your trained model
-model = gb_regressor  # Load your trained model here
+model = gb_regressor 
 
-# Define the Streamlit app
 st.title("House price prediction")
 
 # Input fields for the 7 independent variables
@@ -104,7 +102,7 @@ st.sidebar.header("Input Features")
 # X1 transaction date input through calendar
 X1_date = st.sidebar.date_input("X1 transaction date", min_value=pd.to_datetime("1900-01-01"), max_value=pd.to_datetime("2023-01-01"), value=pd.to_datetime("2022-01-01"))
 
-# Convert the date to an integer (you might want to adjust this conversion based on your use case)
+# Convert the date to an integer 
 X1 = int(X1_date.strftime("%Y%m%d"))
 
 # Other variables as sliders
@@ -136,7 +134,6 @@ ax.set_ylabel('Predicted House Price')
 ax.set_title('Predicted vs Actual House Prices')
 st.pyplot(fig)
 
-# Multiply the prediction by the input value
 result = prediction[0] * Area
 
 # Display the result
